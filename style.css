@@ -64,15 +64,28 @@ h1 small {
   padding: 1.8rem 1.8rem 2rem;
   border-radius: 32px;
   box-shadow: 0 8px 24px rgba(0, 32, 48, 0.08);
+  max-height: 80vh;
+  overflow-y: auto;
+}
+.form-panel::-webkit-scrollbar {
+  width: 6px;
+}
+.form-panel::-webkit-scrollbar-track {
+  background: #eef4f8;
+  border-radius: 10px;
+}
+.form-panel::-webkit-scrollbar-thumb {
+  background: #bfd7e3;
+  border-radius: 10px;
 }
 
 .form-group {
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.2rem;
 }
 .form-group label {
   display: block;
   font-weight: 600;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   color: #1d4a5e;
   margin-bottom: 0.3rem;
   letter-spacing: 0.3px;
@@ -80,10 +93,10 @@ h1 small {
 .form-group input,
 .form-group textarea {
   width: 100%;
-  padding: 0.7rem 1rem;
+  padding: 0.6rem 1rem;
   border: 1.5px solid #dbe4ea;
   border-radius: 18px;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   transition: 0.2s;
   background: #fafcfd;
 }
@@ -96,7 +109,7 @@ h1 small {
 }
 .form-group textarea {
   resize: vertical;
-  min-height: 60px;
+  min-height: 50px;
 }
 
 .image-upload {
@@ -130,22 +143,22 @@ h1 small {
   gap: 0.5rem;
   align-items: center;
   background: #f2f8fc;
-  padding: 0.3rem 0.3rem 0.3rem 1rem;
+  padding: 0.2rem 0.2rem 0.2rem 1rem;
   border-radius: 40px;
-  margin-bottom: 0.6rem;
+  margin-bottom: 0.5rem;
 }
 .social-row i {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   color: #2c6c86;
-  width: 1.6rem;
+  width: 1.4rem;
   text-align: center;
 }
 .social-row input {
   border: none;
   background: transparent;
-  padding: 0.6rem 0.2rem;
+  padding: 0.5rem 0.2rem;
   width: 100%;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   border-bottom: 1px dashed #b8cfdb;
 }
 .social-row input:focus {
@@ -155,20 +168,20 @@ h1 small {
 
 .template-selector {
   display: flex;
-  gap: 0.7rem;
+  gap: 0.5rem;
   flex-wrap: wrap;
-  margin: 0.5rem 0 0.2rem;
+  margin: 0.3rem 0 0.2rem;
 }
 .template-btn {
   background: #eef4f8;
   border: 2px solid transparent;
-  padding: 0.5rem 1.2rem;
+  padding: 0.4rem 1rem;
   border-radius: 40px;
   font-weight: 500;
   color: #1e4f64;
   cursor: pointer;
   transition: 0.15s;
-  font-size: 0.9rem;
+  font-size: 0.85rem;
 }
 .template-btn.active {
   border-color: #2f7a9a;
@@ -182,14 +195,14 @@ h1 small {
 
 .action-buttons {
   display: flex;
-  gap: 1rem;
-  margin-top: 1.8rem;
+  gap: 0.8rem;
+  margin-top: 1.5rem;
   flex-wrap: wrap;
 }
 .btn {
   background: white;
   border: 1.5px solid #c8dbe6;
-  padding: 0.7rem 1.8rem;
+  padding: 0.6rem 1.5rem;
   border-radius: 40px;
   font-weight: 600;
   color: #1d4a5e;
@@ -198,7 +211,7 @@ h1 small {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   flex: 1 1 auto;
   justify-content: center;
   background: #f4faff;
@@ -234,20 +247,20 @@ h1 small {
 .card-wrapper {
   background: white;
   border-radius: 40px;
-  padding: 1.8rem 1.2rem;
+  padding: 1.5rem 1.2rem;
   box-shadow: 0 16px 40px rgba(0, 20, 30, 0.12);
   width: 100%;
-  max-width: 460px;
+  max-width: 480px;
   margin-bottom: 1rem;
   transition: 0.2s;
 }
 
 #cardPreview {
   width: 100%;
-  aspect-ratio: 4 / 2.4;
+  aspect-ratio: 4 / 2.8;
   background: #ffffff;
   border-radius: 28px;
-  padding: 1.6rem 1.8rem;
+  padding: 1.4rem 1.6rem;
   display: flex;
   flex-direction: column;
   box-shadow: inset 0 0 0 1px rgba(0,0,0,0.02);
@@ -273,24 +286,51 @@ h1 small {
 }
 #cardPreview.template-dark .card-name,
 #cardPreview.template-dark .card-title,
+#cardPreview.template-dark .card-company,
+#cardPreview.template-dark .card-detail-item,
+#cardPreview.template-dark .card-bio,
 #cardPreview.template-dark .card-social i {
   color: #f0f6fa;
+}
+#cardPreview.template-dark .card-detail-item i {
+  color: #7faec9;
 }
 #cardPreview.template-dark .card-social i {
   background: #324a58;
   padding: 0.2rem;
   border-radius: 30px;
 }
+#cardPreview.template-dark .card-divider {
+  background: rgba(255,255,255,0.15);
+}
+
+#cardPreview.template-elegant {
+  background: linear-gradient(135deg, #faf6f0, #f0ebe3);
+  border: 2px solid #d4c5b2;
+  box-shadow: 0 8px 0 #c9b9a6;
+}
+#cardPreview.template-elegant .card-name {
+  color: #4a3729;
+}
+#cardPreview.template-elegant .card-title {
+  color: #7a5d4a;
+}
+#cardPreview.template-elegant .card-company {
+  color: #a0806a;
+}
+#cardPreview.template-elegant .card-detail-item i {
+  color: #b3927a;
+}
 
 .card-header {
   display: flex;
   align-items: center;
-  gap: 1.2rem;
-  margin-bottom: 0.6rem;
+  gap: 1rem;
+  margin-bottom: 0.4rem;
 }
 .card-avatar {
-  width: 72px;
-  height: 72px;
+  width: 64px;
+  height: 64px;
   border-radius: 50%;
   background: #cbdde7;
   background-size: cover;
@@ -305,38 +345,74 @@ h1 small {
   justify-content: center;
   background: #bfd7e3;
   color: #42758b;
-  font-size: 2.2rem;
+  font-size: 2rem;
   font-weight: 300;
 }
 .card-name {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   font-weight: 700;
   color: #0f3343;
   line-height: 1.2;
 }
 .card-title {
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   color: #2d6079;
   font-weight: 500;
   letter-spacing: 0.3px;
-  margin-top: 2px;
+}
+.card-company {
+  font-size: 0.75rem;
+  color: #4a7a93;
+  font-weight: 400;
+  opacity: 0.8;
+}
+
+.card-details {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem 0.8rem;
+  margin: 0.3rem 0 0.2rem;
+}
+.card-detail-item {
+  font-size: 0.7rem;
+  color: #2d5a6f;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+.card-detail-item i {
+  font-size: 0.65rem;
+  color: #3f8db3;
+  width: 0.9rem;
+}
+
+.card-bio {
+  font-size: 0.7rem;
+  color: #3a5f73;
+  margin: 0.2rem 0 0.1rem;
+  opacity: 0.85;
+  line-height: 1.3;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
 }
 
 .card-divider {
-  height: 2px;
-  background: rgba(0,0,0,0.05);
-  margin: 0.6rem 0 0.8rem;
-  width: 40%;
+  height: 1.5px;
+  background: rgba(0,0,0,0.06);
+  margin: 0.4rem 0 0.5rem;
+  width: 60%;
 }
 
 .card-social {
   display: flex;
-  gap: 0.8rem;
-  margin-top: 0.2rem;
+  gap: 0.6rem;
+  margin-top: 0.1rem;
   flex-wrap: wrap;
 }
 .card-social i {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   color: #2b657f;
   transition: 0.1s;
   background: rgba(255,255,255,0.5);
@@ -351,15 +427,16 @@ h1 small {
 
 .card-footer {
   margin-top: auto;
-  font-size: 0.7rem;
-  opacity: 0.5;
+  font-size: 0.6rem;
+  opacity: 0.4;
   letter-spacing: 0.5px;
-  padding-top: 0.4rem;
+  padding-top: 0.2rem;
 }
 
 .download-hint {
   color: #1f536b;
   font-weight: 400;
+  font-size: 0.9rem;
 }
 
 /* responsive */
@@ -373,5 +450,8 @@ h1 small {
   }
   h1 {
     font-size: 1.8rem;
+  }
+  .form-panel {
+    max-height: none;
   }
 }

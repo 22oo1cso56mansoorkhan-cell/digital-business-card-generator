@@ -3,16 +3,28 @@
   // DOM elements
   const nameInput = document.getElementById('nameInput');
   const titleInput = document.getElementById('titleInput');
+  const companyInput = document.getElementById('companyInput');
+  const emailInput = document.getElementById('emailInput');
+  const phoneInput = document.getElementById('phoneInput');
+  const locationInput = document.getElementById('locationInput');
+  const bioInput = document.getElementById('bioInput');
   const imageUpload = document.getElementById('imageUpload');
   const githubInput = document.getElementById('githubInput');
   const linkedinInput = document.getElementById('linkedinInput');
   const twitterInput = document.getElementById('twitterInput');
   const websiteInput = document.getElementById('websiteInput');
+  const instagramInput = document.getElementById('instagramInput');
+  const youtubeInput = document.getElementById('youtubeInput');
   const templateBtns = document.querySelectorAll('.template-btn');
   const cardPreview = document.getElementById('cardPreview');
   const avatarPreview = document.getElementById('avatarPreview');
   const cardName = document.getElementById('cardName');
   const cardTitle = document.getElementById('cardTitle');
+  const cardCompany = document.getElementById('cardCompany');
+  const cardEmail = document.getElementById('cardEmail');
+  const cardPhone = document.getElementById('cardPhone');
+  const cardLocation = document.getElementById('cardLocation');
+  const cardBio = document.getElementById('cardBio');
   const cardSocial = document.getElementById('cardSocial');
   const generateBtn = document.getElementById('generateBtn');
   const downloadPngBtn = document.getElementById('downloadPngBtn');
@@ -23,15 +35,29 @@
 
   // ----- helper: render card -----
   function renderCard() {
-    // name & title
+    // name & title & company
     cardName.textContent = nameInput.value.trim() || 'Your name';
     cardTitle.textContent = titleInput.value.trim() || 'Your title';
+    cardCompany.textContent = companyInput.value.trim() || '';
+
+    // contact details
+    const email = emailInput.value.trim();
+    const phone = phoneInput.value.trim();
+    const location = locationInput.value.trim();
+
+    cardEmail.innerHTML = email ? `<i class="fas fa-envelope"></i> <span>${email}</span>` : '';
+    cardPhone.innerHTML = phone ? `<i class="fas fa-phone"></i> <span>${phone}</span>` : '';
+    cardLocation.innerHTML = location ? `<i class="fas fa-map-marker-alt"></i> <span>${location}</span>` : '';
+
+    // bio
+    cardBio.textContent = bioInput.value.trim() || '';
 
     // avatar
     if (imageDataUrl) {
       avatarPreview.style.backgroundImage = `url(${imageDataUrl})`;
       avatarPreview.style.backgroundSize = 'cover';
       avatarPreview.innerHTML = '';
+      avatarPreview.classList.remove('card-avatar-placeholder');
     } else {
       avatarPreview.style.backgroundImage = 'none';
       avatarPreview.style.backgroundSize = 'auto';
@@ -44,11 +70,15 @@
       { icon: 'fab fa-github', url: githubInput.value.trim() },
       { icon: 'fab fa-linkedin', url: linkedinInput.value.trim() },
       { icon: 'fab fa-twitter', url: twitterInput.value.trim() },
-      { icon: 'fas fa-globe', url: websiteInput.value.trim() }
+      { icon: 'fas fa-globe', url: websiteInput.value.trim() },
+      { icon: 'fab fa-instagram', url: instagramInput.value.trim() },
+      { icon: 'fab fa-youtube', url: youtubeInput.value.trim() }
     ];
     cardSocial.innerHTML = '';
+    let hasSocial = false;
     socials.forEach(s => {
       if (s.url) {
+        hasSocial = true;
         const link = document.createElement('a');
         link.href = s.url.startsWith('http') ? s.url : 'https://' + s.url;
         link.target = '_blank';
@@ -59,8 +89,8 @@
         cardSocial.appendChild(link);
       }
     });
-    if (cardSocial.children.length === 0) {
-      cardSocial.innerHTML = '<span style="opacity:0.4; font-size:0.8rem;">no social links added</span>';
+    if (!hasSocial) {
+      cardSocial.innerHTML = '<span style="opacity:0.4; font-size:0.7rem;">no social links added</span>';
     }
 
     // template class
@@ -95,7 +125,12 @@
   });
 
   // ----- live update on input change -----
-  [nameInput, titleInput, githubInput, linkedinInput, twitterInput, websiteInput].forEach(input => {
+  const allInputs = [
+    nameInput, titleInput, companyInput, emailInput, phoneInput, 
+    locationInput, bioInput, githubInput, linkedinInput, twitterInput,
+    websiteInput, instagramInput, youtubeInput
+  ];
+  allInputs.forEach(input => {
     input.addEventListener('input', renderCard);
   });
 
