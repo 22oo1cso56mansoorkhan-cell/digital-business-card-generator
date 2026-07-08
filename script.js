@@ -36,9 +36,13 @@
   // ----- helper: render card -----
   function renderCard() {
     // name & title & company
-    cardName.textContent = nameInput.value.trim() || 'Your name';
-    cardTitle.textContent = titleInput.value.trim() || 'Your title';
-    cardCompany.textContent = companyInput.value.trim() || '';
+    const name = nameInput.value.trim();
+    const title = titleInput.value.trim();
+    const company = companyInput.value.trim();
+
+    cardName.textContent = name || 'Your Name';
+    cardTitle.textContent = title || 'Your Title';
+    cardCompany.textContent = company || '';
 
     // contact details
     const email = emailInput.value.trim();
@@ -50,7 +54,8 @@
     cardLocation.innerHTML = location ? `<i class="fas fa-map-marker-alt"></i> <span>${location}</span>` : '';
 
     // bio
-    cardBio.textContent = bioInput.value.trim() || '';
+    const bio = bioInput.value.trim();
+    cardBio.textContent = bio || '';
 
     // avatar
     if (imageDataUrl) {

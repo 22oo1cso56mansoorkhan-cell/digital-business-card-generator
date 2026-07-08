@@ -61,7 +61,7 @@ h1 small {
 /* FORM (left) */
 .form-panel {
   background: white;
-  padding: 1.5rem 1.5rem 1.8rem;
+  padding: 1.8rem 1.8rem 2rem;
   border-radius: 32px;
   box-shadow: 0 8px 24px rgba(0, 32, 48, 0.08);
 }
@@ -70,33 +70,33 @@ h1 small {
 .form-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 0.8rem 1.2rem;
+  gap: 1rem 1.5rem;
 }
 
 .form-col {
   display: flex;
   flex-direction: column;
-  gap: 0.4rem;
+  gap: 0.8rem;
 }
 
 .form-group {
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.2rem;
 }
 .form-group label {
   display: block;
   font-weight: 600;
-  font-size: 0.78rem;
+  font-size: 0.82rem;
   color: #1d4a5e;
-  margin-bottom: 0.2rem;
+  margin-bottom: 0.3rem;
   letter-spacing: 0.3px;
 }
 .form-group input,
 .form-group textarea {
   width: 100%;
-  padding: 0.45rem 0.8rem;
+  padding: 0.6rem 0.9rem;
   border: 1.5px solid #dbe4ea;
   border-radius: 14px;
-  font-size: 0.85rem;
+  font-size: 0.88rem;
   transition: 0.2s;
   background: #fafcfd;
 }
@@ -105,29 +105,29 @@ h1 small {
   outline: none;
   border-color: #3f8db3;
   background: white;
-  box-shadow: 0 0 0 3px rgba(63, 141, 179, 0.12);
+  box-shadow: 0 0 0 4px rgba(63, 141, 179, 0.1);
 }
 .form-group textarea {
   resize: vertical;
-  min-height: 40px;
+  min-height: 60px;
 }
 
 .image-upload input[type="file"] {
-  padding: 0.2rem 0;
+  padding: 0.3rem 0;
   border: none;
   background: transparent;
-  font-size: 0.8rem;
+  font-size: 0.85rem;
 }
 .image-upload input[type="file"]::file-selector-button {
   background: #e3edf3;
   border: none;
-  padding: 0.3rem 1rem;
+  padding: 0.4rem 1.2rem;
   border-radius: 30px;
   font-weight: 500;
   color: #1a4b5e;
   transition: 0.2s;
   cursor: pointer;
-  font-size: 0.75rem;
+  font-size: 0.8rem;
 }
 .image-upload input[type="file"]::file-selector-button:hover {
   background: #cbdde7;
@@ -135,48 +135,52 @@ h1 small {
 
 .social-row {
   display: flex;
-  gap: 0.4rem;
+  gap: 0.5rem;
   align-items: center;
   background: #f2f8fc;
-  padding: 0.15rem 0.15rem 0.15rem 0.7rem;
+  padding: 0.2rem 0.2rem 0.2rem 0.8rem;
   border-radius: 30px;
-  margin-bottom: 0.3rem;
+  margin-bottom: 0.4rem;
 }
 .social-row i {
-  font-size: 0.95rem;
+  font-size: 1rem;
   color: #2c6c86;
-  width: 1.2rem;
+  width: 1.3rem;
   text-align: center;
 }
 .social-row input {
   border: none;
   background: transparent;
-  padding: 0.35rem 0.2rem;
+  padding: 0.4rem 0.2rem;
   width: 100%;
-  font-size: 0.8rem;
+  font-size: 0.82rem;
   border-bottom: 1px dashed #b8cfdb;
 }
 .social-row input:focus {
   outline: none;
   border-bottom: 2px solid #3f8db3;
 }
+.social-row input::placeholder {
+  color: #a0bccd;
+  font-size: 0.78rem;
+}
 
 .template-selector {
   display: flex;
-  gap: 0.5rem;
+  gap: 0.6rem;
   flex-wrap: wrap;
-  margin: 0.2rem 0 0.1rem;
+  margin: 0.3rem 0 0.1rem;
 }
 .template-btn {
   background: #eef4f8;
   border: 2px solid transparent;
-  padding: 0.3rem 1rem;
+  padding: 0.4rem 1.2rem;
   border-radius: 30px;
   font-weight: 500;
   color: #1e4f64;
   cursor: pointer;
   transition: 0.15s;
-  font-size: 0.8rem;
+  font-size: 0.82rem;
 }
 .template-btn.active {
   border-color: #2f7a9a;
@@ -190,14 +194,14 @@ h1 small {
 
 .action-buttons {
   display: flex;
-  gap: 0.6rem;
-  margin-top: 1rem;
+  gap: 0.8rem;
+  margin-top: 1.2rem;
   flex-wrap: wrap;
 }
 .btn {
   background: white;
   border: 1.5px solid #c8dbe6;
-  padding: 0.5rem 1.2rem;
+  padding: 0.6rem 1.5rem;
   border-radius: 30px;
   font-weight: 600;
   color: #1d4a5e;
@@ -205,8 +209,8 @@ h1 small {
   transition: 0.2s;
   display: inline-flex;
   align-items: center;
-  gap: 0.4rem;
-  font-size: 0.85rem;
+  gap: 0.5rem;
+  font-size: 0.88rem;
   flex: 1 1 auto;
   justify-content: center;
   background: #f4faff;
@@ -321,7 +325,7 @@ h1 small {
   display: flex;
   align-items: center;
   gap: 1rem;
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.5rem;
 }
 .card-avatar {
   width: 64px;
@@ -350,7 +354,7 @@ h1 small {
   line-height: 1.2;
 }
 .card-title {
-  font-size: 0.8rem;
+  font-size: 0.82rem;
   color: #2d6079;
   font-weight: 500;
   letter-spacing: 0.3px;
@@ -365,11 +369,11 @@ h1 small {
 .card-details {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.2rem 0.8rem;
-  margin: 0.2rem 0 0.1rem;
+  gap: 0.3rem 0.8rem;
+  margin: 0.3rem 0 0.2rem;
 }
 .card-detail-item {
-  font-size: 0.65rem;
+  font-size: 0.68rem;
   color: #2d5a6f;
   display: flex;
   align-items: center;
@@ -382,11 +386,11 @@ h1 small {
 }
 
 .card-bio {
-  font-size: 0.7rem;
+  font-size: 0.72rem;
   color: #3a5f73;
-  margin: 0.1rem 0 0.1rem;
+  margin: 0.2rem 0 0.1rem;
   opacity: 0.85;
-  line-height: 1.3;
+  line-height: 1.4;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
@@ -396,18 +400,18 @@ h1 small {
 .card-divider {
   height: 1.5px;
   background: rgba(0,0,0,0.06);
-  margin: 0.3rem 0 0.4rem;
+  margin: 0.4rem 0 0.5rem;
   width: 60%;
 }
 
 .card-social {
   display: flex;
-  gap: 0.5rem;
+  gap: 0.6rem;
   margin-top: 0.1rem;
   flex-wrap: wrap;
 }
 .card-social i {
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   color: #2b657f;
   transition: 0.1s;
   background: rgba(255,255,255,0.5);
@@ -448,7 +452,7 @@ h1 small {
   }
   .form-grid {
     grid-template-columns: 1fr;
-    gap: 0.3rem;
+    gap: 0.5rem;
   }
 }
 
